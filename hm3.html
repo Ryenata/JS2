@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //задание 1 
+
+    //    var i = 2; 
+    //    while(i < 100){
+    //        var j = 2; 
+    //        var ifPrime = true;
+    //        while(j < i){
+    //             ifPrime = i % j !== 0;
+    //             if(!ifPrime){
+    //                 break;
+    //             }
+    //             j++;
+    //        }
+    //        if(ifPrime){
+    //            console.log("Простое число:" + i);
+    //        }
+           
+    //        i++;
+    //    }
+
+       // Задание 2-3 
+
+       var goods = [
+           {
+               title : "Футболка синяя",
+               price: 200,
+               count: 1
+           },
+           {
+               title : "Свитшот черный",
+               price: 400,
+               count: 2
+           },
+           {
+               title : "Худи с принтом",
+               price: 500,
+               count: 3
+           },
+           {
+               title : "Джинсы Слим",
+               price: 1000,
+               count: 1
+           },
+       ];
+        
+        
+       function countBasketPrice() {
+        var sum = 0;
+        for (var item of goods){
+            sum = sum + (item.price * item.count);
+        }
+        console.log("Стоимость корзины составляет:"+ sum)
+       }
+       countBasketPrice();
+
+
+    //    //Задание 4 
+    //    for (i = 0; i <= 9; console.log (i++));
+
+     
+
+    </script>
+    
+</body>
+</html>
