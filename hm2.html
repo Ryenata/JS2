@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Задание 1 
+            // var a = 1, b = 1, c, d;
+            // c = ++a;    alert(c);           / 2    - сначала а увеличивается на единицу, а потом это значение присваивается переменной с (префиксный инкремент)
+            // d = b++;   alert(d);           / 1 - сначала значение переменной b присваивается переменной с , а потом увеличивается на единицу (постфиксный инкремент)
+            // c = (2+ ++a);    alert(c);      / 5 -    с= (2+3) , где 3- это предварительно увеличенное на единицу значение а из 13-ой строки (т.е 2 ), которое было увеличено еще раз  
+            // d = (2+ b++);   alert(d);      / 4 -    d=(2+2), где 2 - это значение b из 14-ой строки, увеличенное на единицу уже после присваивания этого значения переменной d 
+            // alert(a);                    / 3 -    получается при увеличении a на единицу каждый раз в 13-ой и 15-ой строке 
+            // alert(b);                    / 3 -  получается при увеличении b на единицу каждый раз в 14- ой и 16- ой строке 
+
+        //Задание 2
+
+        // var a = 2;
+        // var x = 1 + (a *= 2);  
+
+        // Выполняются следующие действия : 
+        // 1.a *= 2 , т.е а = а*2. Поскольку переменной а изначально присвоено значение 2, то в результате получаем 4 (2*2);
+        // 2. 1+ 4= 5
+        // 3.х=5
+
+
+
+        //задание 3
+        // var a = +prompt('Введите любое число'), b = +prompt('Введите второе число'); 
+        // console.log('a='+ a ,"b="+ b);
+        // if(a>=0 && b>=0) {
+        //     console.log( 'Разность :'+ (a - b));
+        // }
+        // else if (a<0 && b<0){
+        //     console.log('Произведение :'+ (a * b));
+        // }
+        // else if ((a<0 && b>=0) || (a>=0 && b<0)){
+        //     console.log('Сумма :'+ (a + b));
+        // }
+    
+        //задание 4 
+        // var a = Math.floor(Math.random() * (15 - 0) + 0 );
+        // console.log ( 'a = ' + a);
+
+        //     switch (a){
+        //         case 0 :
+        //             console.log (0);
+        //             
+        //         case 1 :
+        //             console.log (1);
+        //             
+        //         case 2 :
+        //             console.log (2);
+        //             
+        //         case 3 :
+        //             console.log (3);
+        //             ;
+        //         case 4 :
+        //             console.log (4);
+        //             
+        //         case 5 :
+        //             console.log (5);
+        //             
+        //         case 6 :
+        //             console.log (6);
+        //          
+        //         case 7 :
+        //             console.log (7);
+        //          
+        //         case 8 :
+        //             console.log (8);
+        //          
+        //         case 9 :
+        //             console.log (9);
+        //          
+        //         case 10 :
+        //             console.log (10);
+        //          
+        //         case 11 :
+        //             console.log (11);
+        //          
+        //         case 12 :
+        //             console.log (12);
+        //          
+        //         case 13 :
+        //             console.log (13);
+        //          
+        //         case 14 :
+        //             console.log (14);
+        //              
+        //         case 15 :
+        //             console.log (15);
+        //     }
+
+            // Задание 5 
+            function sum (a, b){
+                return a + b;
+            }
+            console.log (sum(2, 10));
+
+            function dif (a, b){
+                return a - b;
+            }
+            console.log (dif(13, 8));
+
+            function multiply(a, b){
+                return a * b;
+            }
+            console.log (multiply(15, 7));
+
+            function divide (a, b){
+                return a / b;
+            }
+            console.log (divide(125, 5));
+
+        //  Задание 6 
+        function mathOperation(a, b, operation){
+
+          switch (operation){
+
+            case '+' :
+                return sum(a,b);
+                break;
+
+            case '-' :
+                return dif(a,b);
+                break;
+
+            case '*' :
+                return multiply(a,b);
+                break;
+
+            case '/' :
+               return divide(a,b);
+                break;
+
+          }}
+
+          console.log(mathOperation(6, 2, '*' ));
+          console.log(mathOperation(7, 8, '+' ));
+          console.log(mathOperation(2, 2, '-' ));
+          console.log(mathOperation(68, 2, '/' ));
+
+
+    </script>
+    
+</body>
+</html>

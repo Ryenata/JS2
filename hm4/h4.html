@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Задание 1
+var obj = {}; 
+
+function funForObj() {
+    var number = prompt('Введите число от 0 до 999'); 
+    var arrForObj = number.split(''); 
+    
+    if (arrForObj.length == 3) { 
+        obj.hund = arrForObj[0]; 
+        obj.ten = arrForObj[1]; 
+        obj.unit = arrForObj[2]; 
+        return obj;
+    }
+    else if (arrForObj.length == 2) {
+        obj.ten = arrForObj[0]; 
+        obj.unit = arrForObj[1]; 
+    }
+    else if (arrForObj.length == 1) {
+        obj.unit = arrForObj[0]; 
+    }
+    else {
+        console.log("Вы ввели число больше 999 !");  
+    }      
+}
+
+funForObj();
+console.log(obj);
+
+
+
+//Задание 2
+
+
+    </script>
+</body>
+</html>
