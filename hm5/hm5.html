@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div></div>
+<script>
+    var letters = ["A", "B", "C", "D", "E", "F", "G", "H"];
+    
+    var coordinates = [
+        { name: "Л",image:"&#9820;", x: 1, y: 1},
+        { name: "Л",image:"&#9814;", x: 8, y: 1},
+        { name: "Л",image:"&#9814;", x: 8, y: 8},
+        { name: "Л",image:"&#9820;", x: 1, y: 8},
+        { name: "Конь",image:"&#9822;", x: 1, y: 2},
+        { name: "Конь",image:"&#9822;", x: 1, y: 7},
+        { name: "Конь",image:"&#9816;", x: 8, y: 7},
+        { name: "Конь",image:"&#9816;", x: 8, y: 2},
+        { name: "С",image:"&#9821;", x: 1, y: 3},
+        { name: "С",image:"&#9821;", x: 1, y: 6},
+        { name: "С",image:"&#9815;", x: 8, y: 6},
+        { name: "С",image:"&#9815;", x: 8, y: 3},
+        { name: "Ф",image:"&#9819;", x: 1, y: 4},
+        { name: "Ф",image:"&#9813;", x: 8, y: 4},
+        { name: "К",image:"&#9818;", x: 1, y: 5},
+        { name: "К",image:"&#9812;", x: 8, y: 5},
+        { name: "П",image:"&#9823;", x: 2, y: 1},
+        { name: "П",image:"&#9823;", x: 2, y: 2},
+        { name: "П",image:"&#9823;", x: 2, y: 3},
+        { name: "П",image:"&#9823;", x: 2, y: 4},
+        { name: "П",image:"&#9823;", x: 2, y: 5},
+        { name: "П",image:"&#9823;", x: 2, y: 6},
+        { name: "П",image:"&#9823;", x: 2, y: 7},
+        { name: "П",image:"&#9823;", x: 2, y: 8},
+        { name: "П",image:"&#9817;", x: 7, y: 1},
+        { name: "П",image:"&#9817;", x: 7, y: 2},
+        { name: "П",image:"&#9817;", x: 7, y: 3},
+        { name: "П",image:"&#9817;", x: 7, y: 4},
+        { name: "П",image:"&#9817;", x: 7, y: 5},
+        { name: "П",image:"&#9817;", x: 7, y: 6},
+        { name: "П",image:"&#9817;", x: 7, y: 7},
+        { name: "П",image:"&#9817;", x: 7, y: 8},
+    ];
+
+    var isBlack= true;
+    var table = document.createElement ("table");
+    
+    for(var i = 1;i <= 10;i++){
+        if(i === 1 || i === 10){
+            var tr = document.createElement("tr");
+            table.append(tr);            
+            for (var j = 1; j <= 10; j++){
+                if(j == 1 || j == 10){
+                    var td = document.createElement("td");
+                    tr.append(td);
+                }
+                else {
+                    var td = document.createElement("td");
+                    td.innerHTML = letters[j - 2];
+                    tr.append(td);
+                }
+            }
+        }
+        else{
+            var tr = document.createElement("tr");
+            table.append(tr);
+            for (var j = 1; j <= 10; j++){
+                if(j == 1 || j == 10){
+                    var td = document.createElement("td");
+                    td.innerHTML = i - 1;
+                    tr.append(td);
+                }
+                else{
+                    var td = document.createElement("td");
+                    if (j == 2){
+                        isBlack = !isBlack;
+                    }
+                    if (isBlack){
+                        td.className= "black_block";
+                        isBlack= false;
+                    }
+                    else{
+                        isBlack = true; 
+                        td.className= "white_block";
+                    }
+
+                    var currentX = i - 1;
+                    var currentY = j - 1;
+                    var figures = coordinates.filter(function(element) {
+                        return element.x === currentX && element.y === currentY;
+                    });
+                    if(figures[0]) {
+                        td.innerHTML = figures[0].name + figures[0].image;
+                    }
+                    
+                    tr.append(td);
+                }
+            }
+        }
+     }
+     document.querySelector('div').append(table);
+
+    
+</script>
+    
+</body>
+</html>    
